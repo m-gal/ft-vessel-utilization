@@ -71,13 +71,13 @@ Fuel consumption per mile [fc_tn_mile] | "MRV(merged):= Total FC [m tonnes] / di
 ----
 ### `Workflow's sequence:`
     1. Prepare container ships data w/o missings:
-        1.. ./containerships/shipdb_explore_data.py
-        1.1 ./containerships/shipdb_process_data.py
-        1.2 ./containerships/shipdb_train_model_enrich.py
+        1.. ./vessel_utilize/data/shipdb_explore_data.py
+        1.1 ./vessel_utilize/data/shipdb_process_data.py
+        1.2 ./vessel_utilize/data//shipdb_train_model_enrich.py
     2. Prepare labeled development data set:
-        2.1 ./data/vu_create_dev_set.py
+        2.1 ./vessel_utilize/data//vu_create_dev_set.py
     3. Train model:
-        3.1 ./model/vu_train_model_ml.py
+        3.1 ./vessel_utilize/model/vu_train_model_ml.py
 
 ----
 
