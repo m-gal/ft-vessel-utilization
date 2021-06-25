@@ -1,10 +1,10 @@
+mlflow
 cloudpickle==1.6.0
 dataprep==0.2.15
 fastapi==0.65.1
 ipython=7.23.1
 joblib==1.0.1
 matplotlib==3.4.2
-mlflow==1.17.0
 numpy==1.20.2
 pandas==1.2.4
 pandas-profiling==3.0.0

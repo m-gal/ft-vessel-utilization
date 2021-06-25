@@ -3,31 +3,37 @@
 
 ##  [Container Ships' Utilaization model.](https://www.notion.so/Vessels-utilization-modeling-2310ae81c4d140a99806e13614e7bd96)
 
-#### Objective:
-We want to use the AIS-report data to predict the Vessel’s Utilization ( VU ).
+### Objective:
+We want to use the AIS-report data to predict the Vessel’s Utilization ( __VU__ ).
 Model should have personal API for input.
 Model's output will be used as income feature for other models.
 
-#### Target:
-We want to know: "Right now the container ship with the TEU designed capacity "TEUdesigned" has on board the "TEUestimated" containers actually":
-    VU = TEUestimated / TEUdesigned
+### Target:
+We want to know: "Right now the container ship with the TEU designed capacity __**TEUdesigned**__
+has on board the __**TEUestimated**__ containers actually".
+Then we will be able to calculate Utilization ratio:
+    __VU = TEUestimated / TEUdesigned__
 
-#### The Vessel’s Utilization model’ design & logic:
-From the AIS report we will use the actual AIS “draught” as a main feature.\
+### The Vessel’s Utilization model’ design & logic:
+Finally to predict the __**Vessel Utilization**__ we plan to use info from AIS Message#5.
 
-As a vessel’s feature, we plan use the main vessels’ static data.
-To predict the VU we plan to exploit such features:
+    Data from AIS Message Type 5:
+        Dimension to Bow
+        Dimension to Stern
+        Dimension to Port
+        Dimension to Starboard
+        Draught
 
-    AIS report:  Draught actual
-    ShipDB:      Draft designed
-    ShipDB:      Deadweight designed
-    ShipDB:      Displacement
-    ShipDB:      Gross tonnage
-    ShipDB:      Net tonnage
-    ShipDB:      Length overall
-    ShipDB:      Breadth moulded (beam)
-    ShipDB:      Depth
-    ShipDB:      Ballast water
+To train a final model we will use a development dataset based on the enriched
+data for container ships from the our latest shipDB and vessels tracker (voyages) dataset.
+
+    Data from 'containershipdb_vu_devset.csv':
+        ais_dim_a: equivalent for Dimension to Bow
+        ais_dim_b: equivalent for Dimension to Stern
+        ais_dim_c: equivalent for Dimension to Port
+        ais_dim_d: equivalent for Dimension to Starboard
+        draught:
+
 
 #### The Challenge:
 Since we does not have a ground truth data related to an amount of containers on ship’s board which we could to use as labeled target variables, we should create them.
