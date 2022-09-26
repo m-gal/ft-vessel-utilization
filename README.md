@@ -1,5 +1,5 @@
 
-<img src="https://467222-1467340-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2015/02/Singapore-Strait-4-e1606112480649-780x470.jpg" width="1000">
+<img src="./docs/utilization.png" width="1000">
 
 ##  [Container Ships' Utilaization model.](https://www.notion.so/Vessels-utilization-modeling-2310ae81c4d140a99806e13614e7bd96)
 
@@ -68,11 +68,11 @@ CONSTANTweight [constant] | Assume:= Crew: 20 folks per 100kg per + Provision:10
 CONTAINERdensity | 14 tons
 ======Auxilary data=======
 Displacement [displacement] | shipDB:= displacement
-"Voyage distance, miles [voyage_ml]" | s3://ls-aishub-inflated/voyages_vt_p1_wd/combined_vt:= distance
-"Voyage duration, hours [voyage_hr]" | s3://ls-aishub-inflated/voyages_vt_p1_wd/combined_vt:= duration//3600
-Fuel consumption per mile [fc_tn_mile] | "MRV(merged):= Total FC [m tonnes] / dist_miles "
-" Fuel consumption per hour [fc_tn_hr]" | MRV(merged):= Total FC [m tonnes] / Annual Total time at sea [hours] * 24
-"Average speed, m/hour [speed_ml_hr]" | MRV(merged):= dist_miles / Annual Total time at sea [hours]
+Voyage distance, miles [voyage_ml] | s3://ls-aishub-inflated/voyages_vt_p1_wd/combined_vt:= distance
+Voyage duration, hours [voyage_hr] | s3://ls-aishub-inflated/voyages_vt_p1_wd/combined_vt:= duration//3600
+Fuel consumption per mile [fc_tn_mile] | MRV(merged):= Total FC [m tonnes] / dist_miles
+Fuel consumption per hour [fc_tn_hr] | MRV(merged):= Total FC [m tonnes] / Annual Total time at sea [hours] * 24
+Average speed, m/hour [speed_ml_hr] | MRV(merged):= dist_miles / Annual Total time at sea [hours]
 
 ----
 ### `Workflow's sequence:`
