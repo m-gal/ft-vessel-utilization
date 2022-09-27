@@ -18,23 +18,23 @@ from IPython.display import display
 
 
 #%% Load project stuff
-sys.path.extend(["..", "../..", "../../.."])
+sys.path.extend([".", "./.", "././.", "../..", "../../.."])
 dir = Path("d:/fishtail/data/ls-aishub-inflated/shipdb")
 # dir = Path("d:/fishtail/projects/ft-vessel-utilization/data/processed")
 
 # Load project configu
-from vessel_utilize.config import reports_dir
-from vessel_utilize.config import pandas_profiling_dir
-from vessel_utilize.config import shipdb_cols_to_drop
+from vutilize.config import reports_dir
+from vutilize.config import pandas_profiling_dir
+from vutilize.config import shipdb_cols_to_drop
 
 # Load project utils
-from vessel_utilize.utils import set_pd_options
-from vessel_utilize.utils import reset_pd_options
-from vessel_utilize.utils import cols_reorder
-from vessel_utilize.utils import cols_get_na
-from vessel_utilize.utils import cols_get_mixed_dtypes
-from vessel_utilize.utils import cols_coerce_mixed_to_num
-from vessel_utilize.utils import df_get_glimpse
+from vutilize.utils import set_pd_options
+from vutilize.utils import reset_pd_options
+from vutilize.utils import cols_reorder
+from vutilize.utils import cols_get_na
+from vutilize.utils import cols_get_mixed_dtypes
+from vutilize.utils import cols_coerce_mixed_to_num
+from vutilize.utils import df_get_glimpse
 
 #%% LOCAL: First testing loading -----------------------------------------------
 def load_test(file="shipdb_export_04_2021.csv"):

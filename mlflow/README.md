@@ -7,7 +7,7 @@ with Tracking Server\
 and later with Model Registry to register models and deploy them to "production"
 as a REST endpoint locally.
 
-* The Storage of an MLflow Tracking Server will being kept in separeted directory `/root_project_folder/mlflow/`
+* The Storage of an MLflow Tracking Server will being kept in separeted directory **[./mlflow]**
 __________________________________
 
 ## # Setup MLflow Tracking Server:
@@ -16,22 +16,21 @@ __Each time when the project is opened newally__
 (or at first time you start train models)\
 you must to start MLflow Tracking Server locally:
 
-1. Open in Integrated Terminal a `/root_project_folder/mlflow` and run Tracking Server:
-    * `mlflow server --backend-store-uri sqlite:///mlregistry.db
-    --default-artifact-root file://PATH-TO-ROOT-PROJECT-FOLDER/mlflow/mlruns`
+1. Open in Integrated Terminal in the **[./mlflow]** and run Tracking Server:
+    * `>mlflow server --backend-store-uri sqlite:///mlregistry.db
+    --default-artifact-root file://{PATH-TO-ROOT-PROJECT-FOLDER}/mlflow/mlruns`
     ###### *for example, you should change the absolute path like: `file://d:/fishtail/projects/ft-vessel-utilization/mlflow/mlruns`*
 
+    or run the following:
+    * `>mlflow_run_local_server.sh`
 
     or run the following:
-    * `mlflow_run_local_server.sh`
-
-    or run the following:
-    * `mlflow run -e server .` which runs the `mlflow_run_local_server.sh` file.
+    * `>mlflow run -e server .` which runs the _mlflow_run_local_server.sh_ file.
 
 2. Go to local [MLflow UI](http://127.0.0.1:5000)\
-or you can launch MLflow UI in the `/root_project_folder/mlflow` folder the following
+or you can launch MLflow UI in the **[./mlflow]** folder the following
 command:
-    * `mlflow ui --backend-store-uri sqlite:///mlregistry.db`
+    * `>mlflow ui --backend-store-uri sqlite:///mlregistry.db`
 
 3. You can check how MLflow Tracking Server works with `../checks/check_mlflow_local_server.py`
 
@@ -58,7 +57,7 @@ with comparing the Models performance metrics pick the best model:\
 
 2. To deploy (serve) the model locally, open in Integrated Terminal
 the `/root_project_folder` and run:
-    * `mlflow models serve -m <Full_Path_to_your_model> -p 8080`\
+    * `>mlflow models serve -m <Full_Path_to_your_model> -p 8080`\
 where <Full_Path_to_your_model> can be drawn from the model Artifacts
 in MLflow UI or using Python API,\
 or may be your own custom folder on local machine.
@@ -91,15 +90,15 @@ section.
 5. You can register any models you wish and transit it into `Staging`
 
 6. To deploy the productioned model from Model Registry, Open in Integrated
-Terminal the `/root_project_folder` and run:
-    * `mlflow_serve_local_model.sh`
+Terminal the `./` and run:
+    * `>mlflow_serve_local_model.sh`
 
 
 ## # Making predictions with deployed model:
 ----------------------------------
-From another terminal opened in `/root_project_folder/mlflow`\
+From another terminal opened in in **[./mlflow]**\
 send a POST request with JSON-serialized pandas DataFrames in the 'split' orientation:
-* `python mlflow_predict_local_deployed.py`\
+* `>python mlflow_predict_local_deployed.py`\
 *Also you can run this module with VS Code Interactive Python Window.*
 
 ----------------------------------
@@ -108,5 +107,5 @@ send a POST request with JSON-serialized pandas DataFrames in the 'split' orient
 1. To stop deployed model kill the Terminal in which it was deployed ( Ctrl+C ).
 ### # Deleting MLflow Registry (sqlite db file) and mlruns artifact folder:
 1. Stop all deployed models.
-2. Open in Integrated Terminal the `/root_project_folder/mlflow` and run:
-    * `mlflow_remove_local_db.sh`
+2. Open in Integrated Terminal in the **[./mlflow]**:
+    * `>mlflow_remove_local_db.sh`

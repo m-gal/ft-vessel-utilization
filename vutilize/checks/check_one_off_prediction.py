@@ -8,12 +8,12 @@ import sys
 import warnings
 
 #%% Load project's stuff
-sys.path.extend(["..", "../..", "../../.."])
+sys.path.extend([".", "./.", "././.", "../..", "../../.."])
 
-from vessel_utilize.config import models_dir
-from vessel_utilize.utils import load_model
-from vessel_utilize.utils import make_example_df
-from vessel_utilize.utils import mape
+from vutilize.config import models_dir
+from vutilize.utils import load_model
+from vutilize.utils import make_example_df
+from vutilize.utils import mape
 
 #%% Define some functions ------------------------------------------------------
 def predict_example_df(model, target):
