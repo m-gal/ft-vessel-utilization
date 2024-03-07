@@ -46,10 +46,10 @@ from vutilize.model._xgb import param_search as get_param_search_xgb
 from vutilize.model._rf import model as get_model_rf
 from vutilize.model._rf import param_search as get_param_search_rf
 
-from vutilize.data.shipdb_train_model_enrich import bayesian_search_cv
-from vutilize.data.shipdb_train_model_enrich import save_params
-from vutilize.data.shipdb_train_model_enrich import train_model
-from vutilize.data.shipdb_train_model_enrich import calculate_metrics
+from vutilize.data.shipdb_train_model_to_enrich import bayesian_search_cv
+from vutilize.data.shipdb_train_model_to_enrich import save_params
+from vutilize.data.shipdb_train_model_to_enrich import train_model
+from vutilize.data.shipdb_train_model_to_enrich import calculate_metrics
 
 
 #%%! Toggles to flow through

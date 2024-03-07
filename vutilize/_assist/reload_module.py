@@ -54,9 +54,9 @@ print(inspect.getsource(vutilize.model._xgb.model))
 print(inspect.getsource(vutilize.model._xgb.param_search))
 
 #%% shipdb_train_model_enrich -------------------------------------------------------=
-import vutilize.data.shipdb_train_model_enrich
+import vutilize.data.shipdb_train_model_to_enrich
 
-importlib.reload(vutilize.data.shipdb_train_model_enrich)
-print(inspect.getsource(vutilize.data.shipdb_train_model_enrich.train_model))
+importlib.reload(vutilize.data.shipdb_train_model_to_enrich)
+print(inspect.getsource(vutilize.data.shipdb_train_model_to_enrich.train_model))
 
 #%%
