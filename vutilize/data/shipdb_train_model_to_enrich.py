@@ -46,27 +46,27 @@ from pprint import pprint
 from IPython.display import display
 
 #%% Load project's stuff
-sys.path.extend(["..", "../..", "../../.."])
-import vessel_utilize
+sys.path.extend([".", "./.", "././.", "../..", "../../.."])
+import vutilize
 
 # Load custom classes and utils
-from vessel_utilize.config import data_processed_dir
-from vessel_utilize.config import models_dir
-from vessel_utilize.config import reports_dir
-from vessel_utilize.utils import set_pd_options
-from vessel_utilize.utils import set_matlotlib_params
-from vessel_utilize.utils import reset_pd_options
-from vessel_utilize.utils import df_get_glimpse
-from vessel_utilize.utils import mape as my_mape
-from vessel_utilize.utils import mlflow_set_exp_id
-from vessel_utilize.utils import mlflow_get_run_data
-from vessel_utilize.utils import mlflow_del_default_experiment
-from vessel_utilize.plots import plot_residuals_errors
+from vutilize.config import data_processed_dir
+from vutilize.config import models_dir
+from vutilize.config import reports_dir
+from vutilize.utils import set_pd_options
+from vutilize.utils import set_matlotlib_params
+from vutilize.utils import reset_pd_options
+from vutilize.utils import df_get_glimpse
+from vutilize.utils import mape as my_mape
+from vutilize.utils import mlflow_set_exp_id
+from vutilize.utils import mlflow_get_run_data
+from vutilize.utils import mlflow_del_default_experiment
+from vutilize.plots import plot_residuals_errors
 
-from vessel_utilize.model._xgb import model as get_model_xgb
-from vessel_utilize.model._xgb import param_search as get_param_search_xgb
-from vessel_utilize.model._rf import model as get_model_rf
-from vessel_utilize.model._rf import param_search as get_param_search_rf
+from vutilize.model._xgb import model as get_model_xgb
+from vutilize.model._xgb import param_search as get_param_search_xgb
+from vutilize.model._rf import model as get_model_rf
+from vutilize.model._rf import param_search as get_param_search_rf
 
 #%%! Toggles to flow through
 rnd_state = 42

@@ -21,7 +21,9 @@ from mlflow.tracking import MlflowClient
 from IPython.display import display
 from pprint import pprint
 
-from vessel_utilize.config import data_processed_dir
+
+sys.path.extend([".", "./.", "././.", "../..", "../../.."])
+from vutilize.config import data_processed_dir
 
 # ------------------------------------------------------------------------------
 # ----------------------------- P A R A M E T E R S ----------------------------

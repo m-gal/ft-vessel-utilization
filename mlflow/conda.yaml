@@ -1,4 +1,4 @@
-name: ft-vessel-utilization
+name: ft-vutilize
 channels:
   - defaults
   - conda-forge

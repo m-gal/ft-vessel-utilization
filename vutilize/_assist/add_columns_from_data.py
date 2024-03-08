@@ -15,18 +15,18 @@ from pathlib import Path
 
 
 #%% Load project stuff
-sys.path.extend(["..", "../..", "../../.."])
+sys.path.extend([".", "./.", "././.", "../..", "../../.."])
 data_raw_dir = Path("d:/fishtail/data/ls-aishub-inflated/shipdb")
 
 # Load project configu
-from vessel_utilize.config import data_processed_dir
+from vutilize.config import data_processed_dir
 
 # Load project utils
-from vessel_utilize.utils import set_pd_options
-from vessel_utilize.utils import reset_pd_options
-from vessel_utilize.utils import df_get_glimpse
-from vessel_utilize.data.shipdb_process_data import load_raw_data
-from vessel_utilize.data.shipdb_train_model_enrich import load_data as load_prep_data
+from vutilize.utils import set_pd_options
+from vutilize.utils import reset_pd_options
+from vutilize.utils import df_get_glimpse
+from vutilize.data.shipdb_process_data import load_raw_data
+from vutilize.data.shipdb_train_model_to_enrich import load_data as load_prep_data
 
 #%% Add data
 def add_columns(df_prep, df_raw, cols_to_add):

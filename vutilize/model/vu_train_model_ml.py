@@ -26,30 +26,30 @@ from sklearn import model_selection
 from pprint import pprint
 
 #%% Load project's stuff
-sys.path.extend(["..", "../..", "../../.."])
+sys.path.extend([".", "./.", "././.", "../..", "../../.."])
 os.environ["NUMEXPR_MAX_THREADS"] = "48"
-import vessel_utilize
+import vutilize
 
 # Load custom classes and utils
-from vessel_utilize.config import data_processed_dir
-from vessel_utilize.config import models_dir
+from vutilize.config import data_processed_dir
+from vutilize.config import models_dir
 
-from vessel_utilize.utils import load_dev_csv
-from vessel_utilize.utils import set_pd_options
-from vessel_utilize.utils import set_matlotlib_params
-from vessel_utilize.utils import reset_pd_options
+from vutilize.utils import load_dev_csv
+from vutilize.utils import set_pd_options
+from vutilize.utils import set_matlotlib_params
+from vutilize.utils import reset_pd_options
 
-from vessel_utilize.plots import plot_residuals_errors
+from vutilize.plots import plot_residuals_errors
 
-from vessel_utilize.model._xgb import model as get_model_xgb
-from vessel_utilize.model._xgb import param_search as get_param_search_xgb
-from vessel_utilize.model._rf import model as get_model_rf
-from vessel_utilize.model._rf import param_search as get_param_search_rf
+from vutilize.model._xgb import model as get_model_xgb
+from vutilize.model._xgb import param_search as get_param_search_xgb
+from vutilize.model._rf import model as get_model_rf
+from vutilize.model._rf import param_search as get_param_search_rf
 
-from vessel_utilize.data.shipdb_train_model_enrich import bayesian_search_cv
-from vessel_utilize.data.shipdb_train_model_enrich import save_params
-from vessel_utilize.data.shipdb_train_model_enrich import train_model
-from vessel_utilize.data.shipdb_train_model_enrich import calculate_metrics
+from vutilize.data.shipdb_train_model_to_enrich import bayesian_search_cv
+from vutilize.data.shipdb_train_model_to_enrich import save_params
+from vutilize.data.shipdb_train_model_to_enrich import train_model
+from vutilize.data.shipdb_train_model_to_enrich import calculate_metrics
 
 
 #%%! Toggles to flow through

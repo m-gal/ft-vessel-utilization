@@ -26,19 +26,19 @@ from IPython.display import display
 
 
 #%% Load project's stuff
-sys.path.extend(["..", "../..", "../../.."])
-import vessel_utilize
+sys.path.extend([".", "./.", "././.", "../..", "../../.."])
+import vutilize
 
 # Load custom classes and utils
-from vessel_utilize.config import data_processed_dir
-from vessel_utilize.config import reports_dir
-from vessel_utilize.utils import set_pd_options
-from vessel_utilize.utils import set_matlotlib_params
-from vessel_utilize.utils import reset_pd_options
-from vessel_utilize.utils import df_get_glimpse
-from vessel_utilize.utils import get_outliers_zscore
-from vessel_utilize.utils import get_outliers_quantile
-from vessel_utilize.utils import ridoff_outliers
+from vutilize.config import data_processed_dir
+from vutilize.config import reports_dir
+from vutilize.utils import set_pd_options
+from vutilize.utils import set_matlotlib_params
+from vutilize.utils import reset_pd_options
+from vutilize.utils import df_get_glimpse
+from vutilize.utils import get_outliers_zscore
+from vutilize.utils import get_outliers_quantile
+from vutilize.utils import ridoff_outliers
 
 
 #%% Report functions -----------------------------------------------------------

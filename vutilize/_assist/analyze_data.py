@@ -17,14 +17,14 @@ from pprint import pprint
 
 
 #%% Load project stuff
-sys.path.extend(["..", "../..", "../../.."])
+sys.path.extend([".", "./.", "././.", "../..", "../../.."])
 
 # Load project configu
-from vessel_utilize.config import data_raw_dir
+from vutilize.config import data_raw_dir
 
 # Load project utils
-from vessel_utilize.utils import set_pd_options
-from vessel_utilize.utils import reset_pd_options
+from vutilize.utils import set_pd_options
+from vutilize.utils import reset_pd_options
 
 set_pd_options()
 

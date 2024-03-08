@@ -19,21 +19,21 @@ from IPython.display import display
 
 
 #%% Load project stuff
-sys.path.extend(["..", "../..", "../../.."])
+sys.path.extend([".", "./.", "././.", "../..", "../../.."])
 # os.environ["NUMEXPR_MAX_THREADS"] = "48"
 
 # Load project configu
-from vessel_utilize.config import data_processed_dir
-from vessel_utilize.config import reports_dir
-from vessel_utilize.config import shipdb_cols_to_use
+from vutilize.config import data_processed_dir
+from vutilize.config import reports_dir
+from vutilize.config import shipdb_cols_to_use
 
 # Load project utils
-from vessel_utilize.utils import set_pd_options
-from vessel_utilize.utils import reset_pd_options
-from vessel_utilize.utils import cols_coerce_mixed_to_num
-from vessel_utilize.utils import df_get_glimpse
-from vessel_utilize.utils import get_outliers_zscore
-from vessel_utilize.utils import ridoff_outliers
+from vutilize.utils import set_pd_options
+from vutilize.utils import reset_pd_options
+from vutilize.utils import cols_coerce_mixed_to_num
+from vutilize.utils import df_get_glimpse
+from vutilize.utils import get_outliers_zscore
+from vutilize.utils import ridoff_outliers
 
 
 #%% Load
