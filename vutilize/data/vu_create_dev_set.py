@@ -11,8 +11,7 @@
     @author: mikhail.galkin
 """
 
-
-#%% Load libraries
+# %% Load libraries
 import sys
 import warnings
 
@@ -25,7 +24,7 @@ from dataprep.eda import create_report
 from IPython.display import display
 
 
-#%% Load project's stuff
+# %% Load project's stuff
 sys.path.extend([".", "./.", "././.", "../..", "../../.."])
 import vutilize
 
@@ -41,7 +40,7 @@ from vutilize.utils import get_outliers_quantile
 from vutilize.utils import ridoff_outliers
 
 
-#%% Report functions -----------------------------------------------------------
+# %% Report functions -----------------------------------------------------------
 def make_sweetviz_analyze(df, name, target="draught_fact"):
     print(f"\nSweetViz analysis report start...")
     print(f"\tSweetViz: {sv.__version__}")
@@ -100,7 +99,7 @@ def make_dataprep_report(
     # report.show_browser()
 
 
-#%% Data -----------------------------------------------------------------------
+# %% Data -----------------------------------------------------------------------
 def load_static_csv(dir, file_to_load):
     print(f"\nLoad data:\n\tDir: {dir}\n\tFile: {file_to_load}")
     usecols_static = [
@@ -206,7 +205,7 @@ def load_mrv_csv(dir, file_to_load):
 
 
 def load_size_class(
-    dir=Path("d:/fishtail/data/ls-aishub-inflated/shipdb"),
+    dir=Path("d:/fishtailS3/ls-aishub-inflated/shipdb"),
     file_to_load="shipdb_export_04_2021.csv",
 ):
     print(f"\nLoad size classes for ships:\n\tDir: {dir}\n\tFile: {file_to_load}")
@@ -224,7 +223,7 @@ def load_size_class(
     return df
 
 
-#%% Merge ----------------------------------------------------------------------
+# %% Merge ----------------------------------------------------------------------
 def merge_data(df_voyages, df_static, df_mrv):
     print(f"\nMerge w/ voyages dataset...")
     df_merged = pd.merge(
@@ -268,7 +267,7 @@ def merge_size(df, df_size):
     return df
 
 
-#%% Outliers -------------------------------------------------------------------
+# %% Outliers -------------------------------------------------------------------
 def del_outliers_isolation_forest(df):
     print(f"\nGet outliers with Isolation Forest...")
     cols_cat = ["from", "to"]
@@ -292,7 +291,7 @@ def del_outliers_isolation_forest(df):
     return df_wo_outl
 
 
-#%% Sanity check ---------------------------------------------------------------
+# %% Sanity check ---------------------------------------------------------------
 def check_draught_truth(df, draught_check, draught_fact="draught_fact"):
     # Calculate difference in percents
     diff = (df[draught_check] - df[draught_fact]) / df[draught_check] * 100
@@ -346,7 +345,7 @@ def make_sanity_cleanoff(df):
     return df
 
 
-#%% Columns --------------------------------------------------------------------
+# %% Columns --------------------------------------------------------------------
 def setup_size_class(df):
     print(f"\nSetup Size Classes...")
 
@@ -518,7 +517,7 @@ def cols_reorder(df):
     return df
 
 
-#%% Main =======================================================================
+# %% Main =======================================================================
 def main(
     file_static_data,
     file_voyages_data,
@@ -577,7 +576,7 @@ def main(
     print(f"!!! DONE !!!")
 
 
-#%% RUN ========================================================================
+# %% RUN ========================================================================
 if __name__ == "__main__":
     warnings.filterwarnings("ignore")
     rnd_state = 42
@@ -585,19 +584,19 @@ if __name__ == "__main__":
         file_static_data="containershipdb_042021_enriched.csv",
         file_voyages_data="combined_vt.csv",
         file_mrv_data="merged_mrv.csv",
-        dir_voyages_data="d:/fishtail/data/ls-aishub-inflated/voyages_vt_p1_wd",
-        dir_mrv_data="d:/fishtail/data/ls-aishub-inflated/eu_mrv_data",
+        dir_voyages_data="d:/fishtailS3/ls-aishub-inflated/voyages_vt_p1_wd",
+        dir_mrv_data="d:/fishtailS3/ls-aishub-inflated/eu_mrv_data",
         file_to_save="containershipdb_vu_devset.csv",
     )
 
-#%% Aux cell
+# %% Aux cell
 # file_static_data = "containershipdb_042021_enriched.csv"
-# dir_voyages_data = Path("d:/fishtail/data/ls-aishub-inflated/_voyages_vt_p1_wd")
+# dir_voyages_data = Path("d:/fishtailS3/ls-aishub-inflated/_voyages_vt_p1_wd")
 # file_voyages_data = "combined_vt.csv"
-# dir_mrv_data = Path("d:/fishtail/data/ls-aishub-inflated/eu_mrv_data")
+# dir_mrv_data = Path("d:/fishtailS3/ls-aishub-inflated/eu_mrv_data")
 # file_mrv_data = "merged_mrv.csv"
 # file_to_save = "containershipdb_vu_devset.csv"
-#%%
+# %%
 # ^ TO DO:
 # ^ [X] turn the "freshwater" to the formula from duration
 # ^ [] turn the number of crew to the formula from deadweiht

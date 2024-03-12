@@ -29,7 +29,7 @@ from vutilize.utils import reset_pd_options
 set_pd_options()
 
 #%% LOCAL: First testing loading -----------------------------------------------
-data_dir = Path("d:/fishtail/data/ls-aishub-inflated/vessel_tracker_data/")
+data_dir = Path("d:/fishtailS3/ls-aishub-inflated/vessel_tracker_data/")
 
 imo = 9778820  # MILAN MAERSK
 file_csv = "vt_1819_9778820.csv"

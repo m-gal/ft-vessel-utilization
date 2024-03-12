@@ -13,22 +13,23 @@
 
     Example Value for testing:
     {
-      "dim_a": 154,
-      "dim_b": 49,
-      "dim_c": 3,
-      "dim_d": 23,
-      "draught": 9.7
+    "dim_a": 154,
+    "dim_b": 49,
+    "dim_c": 3,
+    "dim_d": 23,
+    "draught": 9.7
     }
 
     Response body must be:
     {
-      "teu_esimated": 561,
-      "vu_esimated": 0.4656
+    "teu_esimated": 561,
+    "vu_esimated": 0.4656
     }
 
     @author: mikhail.galkin
 """
-#%% Load libraries
+
+# %% Load libraries
 import uvicorn
 import joblib
 import pandas as pd
@@ -38,6 +39,7 @@ from pydantic import BaseModel
 
 # Initializing a FastAPI App Instance
 app = FastAPI()
+
 
 # Define request body
 class ais_data(BaseModel):
@@ -67,7 +69,7 @@ model_vu = load_model("XGBRegressor-vu_estimated_0c1914e51e754b3893110f91279301f
 # Defining a Simple GET Request
 @app.get("/utilize/")
 def get_root():
-    return {"Welcome": "The Vessels' Utilization API by Fishtail.ai"}
+    return {"Welcome": "The Vessels' Utilization API"}
 
 
 # Creating an Endpoint to recieve the data to make prediction on.

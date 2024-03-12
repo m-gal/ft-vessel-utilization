@@ -46,7 +46,7 @@ def load_raw_data(file_to_load):
         Pandas DF: [description]
     """
     print(f"\nLoad data from {file_to_load}...")
-    dir = Path("d:/fishtail/data/ls-aishub-inflated/shipdb")
+    dir = Path("d:/fishtailS3/ls-aishub-inflated/shipdb")
     df = pd.read_csv(
         dir / file_to_load,
         header=0,

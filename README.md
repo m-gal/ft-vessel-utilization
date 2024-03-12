@@ -4,7 +4,7 @@
 ##  [Container Ships' Utilaization model.](https://www.notion.so/Vessels-utilization-modeling-2310ae81c4d140a99806e13614e7bd96)
 
 ### Objective:
-We want to use the AIS-report data to predict the Vessel’s Utilization ( __VU__ ).
+We want to use the AIS messages' data to predict the Vessel’s Utilization ( __VU__ ).\
 Model should have personal API for input.
 Model's output will be used as income feature for other models.
 
@@ -15,7 +15,7 @@ Then we will be able to calculate Utilization ratio:
     __VU = TEUestimated / TEUdesigned__
 
 ### The Vessel’s Utilization model’ design & logic:
-Finally to predict the __**Vessel Utilization**__ we plan to use info from AIS Message#5.
+Finally to predict the __**Vessel Utilization**__ we plan to use info from AIS message#5.
 
     Data from AIS Message Type 5:
         Dimension to Bow

@@ -8,15 +8,15 @@
     @author: mikhail.galkin
 """
 
-#%% Load libraries
+# %% Load libraries
 import sys
 import pandas as pd
 from pathlib import Path
 
 
-#%% Load project stuff
+# %% Load project stuff
 sys.path.extend([".", "./.", "././.", "../..", "../../.."])
-data_raw_dir = Path("d:/fishtail/data/ls-aishub-inflated/shipdb")
+data_raw_dir = Path("d:/fishtailS3/ls-aishub-inflated/shipdb")
 
 # Load project configu
 from vutilize.config import data_processed_dir
@@ -28,7 +28,8 @@ from vutilize.utils import df_get_glimpse
 from vutilize.data.shipdb_process_data import load_raw_data
 from vutilize.data.shipdb_train_model_to_enrich import load_data as load_prep_data
 
-#%% Add data
+
+# %% Add data
 def add_columns(df_prep, df_raw, cols_to_add):
     print(f"\nAdd original columns to preprocessed dataset...")
     cols_to_add.append("imo")
@@ -37,7 +38,7 @@ def add_columns(df_prep, df_raw, cols_to_add):
     return df
 
 
-#%% Main =======================================================================
+# %% Main =======================================================================
 def main(
     file_to_load_raw,
     file_to_load_prep,
@@ -55,7 +56,7 @@ def main(
     print(f"!!! DONE !!!")
 
 
-#%% Workflow ===================================================================
+# %% Workflow ===================================================================
 if __name__ == "__main__":
     main(
         file_to_load_raw="shipdb_export_04_2021.csv",
@@ -64,4 +65,4 @@ if __name__ == "__main__":
         cols_to_add=["max_draught"],
     )
 
-#%%
+# %%

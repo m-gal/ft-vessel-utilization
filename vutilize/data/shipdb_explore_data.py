@@ -6,7 +6,8 @@
 
     @author: mikhail.galkin
 """
-#%% Load libraries
+
+# %% Load libraries
 import sys
 import winsound
 import pandas as pd
@@ -17,9 +18,9 @@ from pathlib import Path
 from IPython.display import display
 
 
-#%% Load project stuff
+# %% Load project stuff
 sys.path.extend([".", "./.", "././.", "../..", "../../.."])
-dir = Path("d:/fishtail/data/ls-aishub-inflated/shipdb")
+dir = Path("d:/fishtailS3/ls-aishub-inflated/shipdb")
 # dir = Path("d:/fishtail/projects/ft-vessel-utilization/data/processed")
 
 # Load project configu
@@ -36,7 +37,8 @@ from vutilize.utils import cols_get_mixed_dtypes
 from vutilize.utils import cols_coerce_mixed_to_num
 from vutilize.utils import df_get_glimpse
 
-#%% LOCAL: First testing loading -----------------------------------------------
+
+# %% LOCAL: First testing loading -----------------------------------------------
 def load_test(file="shipdb_export_04_2021.csv"):
     """Pre-loading testing of load"""
     ## num of records in file (excludes header)
@@ -52,7 +54,7 @@ def load_test(file="shipdb_export_04_2021.csv"):
     display(df.sample(n=10, random_state=42).T)
 
 
-#%% LOCAL: Custom functions ----------------------------------------------------
+# %% LOCAL: Custom functions ----------------------------------------------------
 def print_versions():
     print(f" ")
     print(f"Pandas: {pd.__version__}")
@@ -105,7 +107,7 @@ def print_random_entities(df, nrows=6):
     display(df.sample(n=nrows).T)
 
 
-#%% Profiling data and save report ot HTML
+# %% Profiling data and save report ot HTML
 # ------------------------------------------------------------------------------
 # Profiling Exploratary Data Analysis
 # ------------------------------------------------------------------------------
@@ -126,7 +128,7 @@ def make_pandas_profiling_report(
     return pp_report
 
 
-#%% Change config for SweetViz report
+# %% Change config for SweetViz report
 # ------------------------------------------------------------------------------
 # Sweetviz Exploratary Data Analysis
 # ------------------------------------------------------------------------------
@@ -170,7 +172,7 @@ def make_sweetviz_analyze(
     return report
 
 
-#%% Main function for main.py ==================================================
+# %% Main function for main.py ==================================================
 def main(
     file_to_load,
     report_name,
@@ -229,11 +231,11 @@ def main(
         print(f"-------------- SKIP: Exploratary Data Analisys --------------")
 
 
-#%% Workflow ===================================================================
+# %% Workflow ===================================================================
 if __name__ == "__main__":
     main(
         file_to_load="shipdb_export_04_2021.csv",
         report_name="containerships_042021_raw",
     )
 
-#%%
+# %%
