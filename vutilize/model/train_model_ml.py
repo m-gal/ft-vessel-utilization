@@ -4,7 +4,7 @@
     and SPLIT it onto TRAIN & TEST sets
     with BAYESIAN Cross-Validation Searching algorithm upon model
     FIND best huperparams for model on TRAIN set
-    TRAIN ML model w/ huperparams found out on DEV
+    TRAIN ML model w/ hyperparams found out on DEV
     LOG results with MLflow Tracking
 
     @author: mikhail.galkin
@@ -111,7 +111,7 @@ def main(
             Defaults to True.
     """
 
-    print(f"---------- START: Vessels' Utilization Model TrainingModel --------")
+    print(f"---------- START: Vessels' Utilization Model Training ------------")
     set_pd_options()
     set_matlotlib_params()
     print_versions()

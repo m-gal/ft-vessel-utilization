@@ -14,7 +14,7 @@ has on board the __**TEUestimated**__ containers actually".
 Then we will be able to calculate Utilization ratio:
     __VU = TEUestimated / TEUdesigned__
 
-### The Vessel’s Utilization model’ design & logic:
+### The Vessel’s Utilization model’s design & logic:
 Finally to predict the __**Vessel Utilization**__ we plan to use info from AIS message#5.
 
     Data from AIS Message Type 5:
@@ -74,20 +74,28 @@ Fuel consumption per mile [fc_tn_mile] | MRV(merged):= Total FC [m tonnes] / dis
 Fuel consumption per hour [fc_tn_hr] | MRV(merged):= Total FC [m tonnes] / Annual Total time at sea [hours] * 24
 Average speed, m/hour [speed_ml_hr] | MRV(merged):= dist_miles / Annual Total time at sea [hours]
 
-----
-### `Workflow's sequence:`
+
+#### Workflow's sequence:
     1. Prepare container ships data w/o missings:
         1.1 ./vutilize/data/shipdb_explore_data.py
         1.2 ./vutilize/data/shipdb_process_data.py
         1.3 ./vutilize/data//shipdb_train_model_enrich.py
     2. Prepare labeled development data set:
         2.1 ./vutilize/data//vu_create_dev_set.py
-    3. Train model:
-        3.1 ./vutilize/model/vu_train_model_ml.py
+    3. Train 2 models with different targets 'vu_estimated' & 'teu_estimated':
+        3.1 ./vutilize/model/train_model_ml.py
 
-----
 
-### `Project's folders structure:`
+#### Models performance:
+1. Vessel TEU estimation model:
+<img src="./docs/XGBRegressor-vu_estimated_0c1914e51e754b3893110f91279301f5.png" width="1000">
+
+2. Vessel Utilization model:
+<img src="./docs/XGBRegressor-vu_estimated_0c1914e51e754b3893110f91279301f5.png" width="1000">
+
+
+---
+#### Project's folders structure:
 _Some folders may be missing due project's particular aim._
 ```
 ft-vessel-utilization (root folder)
