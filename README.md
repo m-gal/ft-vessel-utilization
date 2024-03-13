@@ -32,7 +32,7 @@ data for container ships from the our latest shipDB and vessels tracker (voyages
         ais_dim_b: equivalent for Dimension to Stern
         ais_dim_c: equivalent for Dimension to Port
         ais_dim_d: equivalent for Dimension to Starboard
-        draught:
+        draught  : Draught
 
 
 #### The Challenge:
@@ -77,13 +77,13 @@ Average speed, m/hour [speed_ml_hr] | MRV(merged):= dist_miles / Annual Total ti
 ----
 ### `Workflow's sequence:`
     1. Prepare container ships data w/o missings:
-        1.. ./vessel_utilize/data/shipdb_explore_data.py
-        1.1 ./vessel_utilize/data/shipdb_process_data.py
-        1.2 ./vessel_utilize/data//shipdb_train_model_enrich.py
+        1.1 ./vutilize/data/shipdb_explore_data.py
+        1.2 ./vutilize/data/shipdb_process_data.py
+        1.3 ./vutilize/data//shipdb_train_model_enrich.py
     2. Prepare labeled development data set:
-        2.1 ./vessel_utilize/data//vu_create_dev_set.py
+        2.1 ./vutilize/data//vu_create_dev_set.py
     3. Train model:
-        3.1 ./vessel_utilize/model/vu_train_model_ml.py
+        3.1 ./vutilize/model/vu_train_model_ml.py
 
 ----
 
@@ -96,7 +96,6 @@ ft-vessel-utilization (root folder)
 │   ├── external     <- Auxilary data from third party sources.
 │   ├── processed    <- The final data and dictionaries for modeling.
 │   └── raw          <- The immutable input data.
-├── docker           <- Dockerfiles for project.
 ├── docs             <- Keeps the project`s and models documentations.
 ├── mlflow           <- MLflow MLOps tools, mlregistry.db and trained models reside here.
 │   ├── mlruns       <- Logged MLflow runs. Keeps models its params, metrics and artifacts.
@@ -107,17 +106,14 @@ ft-vessel-utilization (root folder)
 │   ├── mlmodels     <- Separatly saved models in MLflow Models format to be reused later.
 │   ├── params       <- Separatly saved models` params.
 │   └── predictions  <- The model`s output.
-├── notebooks        <- Jupyter notebooks related to the project.
 ├── pandas_profiling <- Configs for pandas_profiling EDA reports.
-├── pipelines        <- Here are trained pipelines for data processing and models.
 ├── reports          <- Contains generated analysis as HTML, PDF, LaTeX, Excel and etc.
-│   └── figures      <- Graphics and figures to be used in reporting.
-└── vessel_utilize   <- Source code, scripts for use in this project.
+└── vutilize         <- Source code, scripts for use in this project.
     ├── _no_longer_useful <- Obviously, but might be helpful to look on previous ideas.
+    ├── _assist      <- Any types of helping scripts.
     ├── api          <- REST API client for model.
-    ├── assist       <- Any types of helping scripts.
+    ├── aws          <- Notebooks and modules to run in clouds.
     ├── checks       <- Scripts to check some acts whether them works. Not unittests.
-    ├── clouds       <- Notebooks and modules to run in clouds.
     ├── data         <- Scripts to get, to explore, to clean and to process data.
     └── model        <- Scripts to choose, fit & tune, train & evaluate model.
 ```
