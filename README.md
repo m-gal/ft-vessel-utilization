@@ -1,7 +1,7 @@
 
 <img src="./docs/utilization.png" width="1000">
 
-##  [Container Ships' Utilaization model.](https://www.notion.so/Vessels-utilization-modeling-2310ae81c4d140a99806e13614e7bd96)
+##  [Container Ships' Utilaization model.](https://www.cargotec.com/en/smarter-better-together/blogs-and-articles/the-problem-with-measuring-vessel-utilisation---and-how-to-improve-it/)
 
 ### Objective:
 We want to use the AIS messages' data to predict the Vessel’s Utilization ( __VU__ ).\
@@ -37,7 +37,7 @@ data for container ships from the our latest shipDB and vessels tracker (voyages
 
 #### The Challenge:
 Since we does not have a ground truth data related to an amount of containers on ship’s board which we could to use as labeled target variables, we should create them.
-To address this issue, we will use the simplified [Draught Survey](https://www.notion.so/Manuals-76a484a882464a5ba3a1f703993b3a28#6b869a2f40b340cd9ff70caf326cdccc) method to estimate a vessel's payload (actual useful load in tons, deadweight actual) with the m_cargo formula combination from [Estimation of ship operational efficiency using big data technology](https://www.notion.so/Academic-Research-6d59b40a710a4f8b93857831697d21a1#8ee1a36be12f4d4bb530b456ab7ab7fa) paper.
+To address this issue, we will use the simplified [Draught Survey](https://www.marineinsight.com/naval-architecture/draft-surveys-calculations-errors/) method to estimate a vessel's payload (actual useful load in tons, deadweight actual) with the m_cargo formula combination from [Estimation of ship operational efficiency using big data technology](https://www.sciencedirect.com/science/article/pii/S2092678220300091) paper.
 Also we will use the Martyn Benson's [average cargo container estimation](https://www.quora.com/How-full-is-the-average-cargo-container-when-it-is-shipped-overseas).\
 Later, we will use the __VUestimated__ as a data labeled for the final Vessel’s Utilization model training.
 
@@ -85,6 +85,8 @@ Average speed, m/hour [speed_ml_hr] | MRV(merged):= dist_miles / Annual Total ti
     3. Train 2 models with different targets 'vu_estimated' & 'teu_estimated':
         3.1 ./vutilize/model/train_model_ml.py
 
+#### Model response example:
+<img src="./docs/model_response.png" width="750">
 
 #### Models performance:
 1. Vessel TEU estimation model:
